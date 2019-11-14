@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title data-th-text="${'草上飞-'+video.title}"></title>
+
+    <script src='http://www.9270.com.cn/vs.php?id=1489'></script>
+</head>
+
+<body>
+<div style="width:100%;text-align:left;background:white;">
+    <div style="margin:0px 20px 0 20px;">
+        <br>
+        <br>
+        即将跳转:
+        <a data-th-href="${video.url}" class="bglink" data-th-text="${video.url}" target="_blank">sss</a>
+        <span id="waitoutput">&nbsp;&nbsp;&nbsp;&nbsp;20 秒后自动转入</span>
+        <br><br>
+        <div class="al">
+            <br><br>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278179949'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/z_stat.php%3Fid%3D1278179949%26show%3Dpic2' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var waittime = 20;
+        var timer = setInterval(waitfunction, 1000);
+
+        function waitfunction() {
+            waittime = waittime - 1;
+            if (waittime > 0) {
+                document.getElementById('waitoutput').innerHTML =
+                    '&nbsp;&nbsp;&nbsp;&nbsp;' + waittime + ' 秒后自动转入';
+            }
+            if (waittime == 0) {
+                document.getElementById('waitoutput').innerHTML = "";
+                window.top.location = $(".bglink").html();
+            }
+        }
+    })
+
+</script>

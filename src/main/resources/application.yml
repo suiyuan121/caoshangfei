@@ -1,0 +1,105 @@
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: caoshangfei
+    index: 1
+  datasource:
+    name: mysql-ds
+    url: jdbc:mysql://test2-basics:3306/distribution?useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: hjm_dev
+    password: hjm_dev
+    xa:
+      data-source-class-name: com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
+      properties:
+        pinGlobalTxToPhysicalConnection: true
+  hateoas:
+    use-hal-as-default-json-media-type: false
+  jackson:
+    serialization:
+      fail_on_empty_beans: false
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  jpa:
+    open-in-view: true
+    show-sql: true
+    properties:
+      javax.persistence.sharedCache.mode: ENABLE_SELECTIVE
+      hibernate:
+        hbm2ddl.auto: validate
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        cache:
+          use_second_level_cache: false
+          use_query_cache: false
+          region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+        jdbc:
+          batch_size: 30
+        order_inserts: true
+        order_updates: true
+  jta:
+    transaction-manager-id: jta
+    atomikos:
+      datasource:
+        max-pool-size: 128
+        min-pool-size: 16
+        test-query: select 1
+      properties:
+        default-jta-timeout: 10000
+        enable-logging: true
+        force-shutdown-on-vm-exit: true
+        log-base-dir: tx
+        log-base-name: tx
+  session:
+    store-type: redis
+  cache:
+    cache-names: users
+    type: redis
+  mvc:
+    favicon:
+      enabled: false
+    date-format: yyyy-MM-dd HH:mm:ss
+  mail:
+    host: fastsmtp.qiye.163.com
+    username:
+    password:
+  thymeleaf:
+    prefix: /WEB-INF/html/
+    mode: HTML5
+    cache: false
+    suffix: .html
+  devtools:
+    restart:
+      enabled: false
+  pid:
+    file: caoshangfei.pid
+
+server:
+  address: 0.0.0.0
+  port: 8080
+  context-path: /
+  display-name: caoshangfei
+  tomcat:
+    accesslog:
+      enabled: true
+      prefix: xgt_access.log
+    max-connections: 1024
+    max-threads: 128
+  session:
+    timeout: 60
+    cookie:
+      max-age: 60
+  error:
+    whitelabel:
+      enabled: true
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+
+logging:
+  file: caoshangfei.log
+  level:
+    root: INFO
+
+caoshangfei:
+  host: https://cc.he3w.icu/

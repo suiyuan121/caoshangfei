@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head data-th-fragment="common_header(title,links,metas)">
+    <meta charset="utf-8">
+    <title data-th-replace="${title}"></title>
+    <data-th-block data-th-replace="${metas}"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <link rel="canonical" data-th-href="${'http://xiaoguotu.fuwo.com'+#httpServletRequest.requestURI}"/>
+    <meta data-th-content="${'format=html5;url=http://xgt.fuwo.com'+#httpServletRequest.requestURI}"
+          name="mobile-agent">
+    <link rel="shortcut icon" href="http://static.fuwo.com/xgt/pc/images/icon/favicon32.ico"/>
+
+    <link rel="stylesheet" type="text/css" href="http://static.fuwo.com/xgt/pc/css/common/base.css">
+
+    <link rel="alternate" media="only screen and (max-width: 640px)"
+          data-th-href="${'http://xgt.fuwo.com'+#httpServletRequest.requestURI}"/>
+
+    <data-th-block data-th-replace="${links}"/>
+
+    <script>
+        window.g_config = {
+            disableActivityNotice: true,
+            staticHost: 'static.fuwo.com', // 静态文件域名，用于js里面控制图片等静态文件的访问地址
+            serviceHost: "xiaoguotu.fuwo.com"
+        };
+    </script>
+</head>
+
+<body>
+<div id="channel-header" data-th-remove="tag">
+    <header id="home-header" class="home-header">
+        <div class="header-wrapper header-wrapper-996">
+            <span class="logo"></span>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="http://xiaoguotu.fuwo.com" class="nav-item-link active">首页
+                        <span class="bottom-line"></span>
+                    </a>
+                </li>
+                <li data-th-class="${(#strings.contains(#httpServletRequest.requestURI,'photo') or #strings.contains(#httpServletRequest.requestURI,'plist') )?'nav-item  active':'nav-item '}">
+                    <a href="http://xiaoguotu.fuwo.com/photo/" class="nav-item-link">家居美图</a>
+                </li>
+                <li data-th-class="${(#strings.contains(#httpServletRequest.requestURI,'case') or #strings.contains(#httpServletRequest.requestURI,'clist') )?'nav-item  active':'nav-item'}">
+                    <a href="http://xiaoguotu.fuwo.com/case/" class="nav-item-link">家居图册</a>
+                </li>
+                <li data-th-class="${(#strings.contains(#httpServletRequest.requestURI,'topic') )?'nav-item active':'nav-item '}">
+                    <a href="http://xiaoguotu.fuwo.com/topic/" class="nav-item-link">装修案例</a>
+                </li>
+                <li data-th-class="${(#strings.contains(#httpServletRequest.requestURI,'gongzhuang') )?'nav-item active':'nav-item '}">
+                    <a href="http://xiaoguotu.fuwo.com/gongzhuang/" class="nav-item-link">公装图库</a>
+                </li>
+            </ul>
+            <form action="http://xiaoguotu.fuwo.com/search/" method="post" class="header-search-box">
+                <input class="header-search" type="text" name="query" placeholder="搜索你喜欢的"/>
+                <button class="search-btn" type="submit"></button>
+            </form>
+        </div>
+    </header>
+</div>
+
+<div id="detail-head" data-th-remove="tag">
+    <header id="detail-header" class="home-header">
+        <span class="line"></span>
+        <div class="header-wrapper header-wrapper-996">
+            <span class="logo"></span>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="http://xiaoguotu.fuwo.com/" class="nav-item-link">首页</a>
+                </li>
+                <li data-th-class="${(#strings.contains(#httpServletRequest.requestURI,'p') and #strings.contains(#httpServletRequest.requestURI,'gongzhuang')== false )?'nav-item active':'nav-item '}">
+                    <a href="http://xiaoguotu.fuwo.com/photo/" class="nav-item-link">家居美图</a>
+                    <div class="select-type photo-type">
+                        <ul class="select-type-list">
+                            <li class="select-type-item">
+                                <dl class="type-list">
+                                    <dt class="title">按空间 ></dt>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p1p0p0p0/"
+                                                        class="item-link">客厅</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p2p0p0p0/"
+                                                        class="item-link">卧室</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p3p0p0p0/"
+                                                        class="item-link">餐厅</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p4p0p0p0/"
+                                                        class="item-link">厨房</a>
+                                    </dd>
+                                    <dd class="item"><a href="ttp://xiaoguotu.fuwo.com/plist-p5p0p0p0/"
+                                                        class="item-link">卫生间</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p8p0p0p0/"
+                                                        class="item-link">儿童房</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="select-type-item">
+                                <dl class="type-list">
+                                    <dt class="title">按局部 ></dt>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p1p0p0/"
+                                                        class="item-link">背景墙</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p2p0p0/"
+                                                        class="item-link">吊顶</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p3p0p0/"
+                                                        class="item-link">隔断</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p5p0p0/"
+                                                        class="item-link">飘窗</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p6p0p0/"
+                                                        class="item-link">榻榻米</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p7p0p0/"
+                                                        class="item-link">橱柜</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="select-type-item">
+                                <dl class="type-list">
+                                    <dt class="title">按风格 ></dt>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p1p0/"
+                                                        class="item-link">简约</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p2p0/"
+                                                        class="item-link">现代</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p3p0/"
+                                                        class="item-link">中式</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p6p0/"
+                                                        class="item-link">田园</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p8p0/"
+                                                        class="item-link">混搭</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p9p0/"
+                                                        class="item-link">地中海</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="select-type-item">
+                                <dl class="type-list">
+                                    <dt class="title">按颜色 ></dt>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p0p1/"
+                                                        class="item-link">白色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p0p2/"
+                                                        class="item-link">米色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p0p4/"
+                                                        class="item-link">橙色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p0p6/"
+                                                        class="item-link">粉色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p0p7/"
+                                                        class="item-link">绿色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/plist-p0p0p0p11/"
+                                                        class="item-link">咖啡色</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li data-th-class="${(#strings.contains(#httpServletRequest.requestURI,'c') and #strings.contains(#httpServletRequest.requestURI,'gongzhuang')== false  )?'nav-item active':'nav-item '}">
+                    <a href="http://xiaoguotu.fuwo.com/case/" class="nav-item-link">家居图册</a>
+                    <div class="select-type atlas-type">
+                        <ul class="select-type-list">
+                            <li class="select-type-item">
+                                <dl class="type-list">
+                                    <dt class="title">按户型 ></dt>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c1c0c0c0/"
+                                                        class="item-link">小户型</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c2c0c0c0/"
+                                                        class="item-link">一居室</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c3c0c0c0/"
+                                                        class="item-link">二居室</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c4c0c0c0/"
+                                                        class="item-link">三居室</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c6c0c0c0/"
+                                                        class="item-link">复式</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c7c0c0c0/"
+                                                        class="item-link">别墅</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="select-type-item">
+                                <dl class="type-list">
+                                    <dt class="title">按风格 ></dt>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c1c0c0/"
+                                                        class="item-link">简约</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c2c0c0/"
+                                                        class="item-link">现代</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c3c0c0/"
+                                                        class="item-link">中式</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c6c0c0/"
+                                                        class="item-link">田园</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c8c0c0/"
+                                                        class="item-link">混搭</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c9c0c0/"
+                                                        class="item-link">地中海</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="select-type-item">
+                                <dl class="type-list">
+                                    <dt class="title">按颜色 ></dt>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c0c0c1/"
+                                                        class="item-link">白色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c0c0c2/"
+                                                        class="item-link">米色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c0c0c4/"
+                                                        class="item-link">橙色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c0c0c6/"
+                                                        class="item-link">粉色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c0c0c7/"
+                                                        class="item-link">绿色</a>
+                                    </dd>
+                                    <dd class="item"><a href="http://xiaoguotu.fuwo.com/clist-c0c0c0c8/"
+                                                        class="item-link">蓝色</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="http://xiaoguotu.fuwo.com/topic/" class="nav-item-link">装修案例</a>
+                </li>
+                <li data-th-class="${(#strings.contains(#httpServletRequest.requestURI,'gongzhuang'))?'nav-item active':'nav-item'}">
+                    <a href="http://xiaoguotu.fuwo.com/gongzhuang/" class="nav-item-link">公装图库</a>
+                </li>
+            </ul>
+            <div class="header-search-box">
+                <form action="http://xiaoguotu.fuwo.com/search/" method="post">
+                    <input class="header-search" type="text" name="query" placeholder="搜索你喜欢的"/>
+                    <button class="search-btn" type="submit"></button>
+                </form>
+            </div>
+        </div>
+    </header>
+</div>
+
+<!-- 这个是case和photo 列表页上面的 -->
+<div id="hotTag" data-th-remove="tag">
+    <div class="relation-recommend fix-height" id="relation-recommend"
+         data-th-if="${recommTags!=null and #arrays.length(recommTags)>0}">
+        <span class="arrow arrow-down"></span>
+        <div class="title">相关推荐</div>
+        <ul class="recommend-list">
+            <li class="recommend-item" data-th-each="item,itemStat : ${recommTags}">
+                <a class="recommend-item-link" data-th-text="${item.name}"
+                   data-th-href="${'http://xiaoguotu.fuwo.com/search/'+item.id+'/'}">现代风格客厅</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="footer-tag" data-th-remove="tag">
+    <div class="footer-up-part" data-th-unless="${tags==null and links==null}">
+        <ul class="title-list" id="title-list">
+            <li class="title-item hot-recommend active" data-th-if="${tags!=null and #arrays.length(tags)>0}">热门推荐</li>
+            <li class="title-item friend-link" data-th-if="${links!=null and #arrays.length(links)>0}">友情链接</li>
+        </ul>
+        <ul class="content-list" id="content-list">
+            <li class="content-item" data-th-if="${tags!=null and #arrays.length(tags)>0}">
+                <a data-th-each="item,itemStat : ${tags}" class="content-item-link"
+                   data-th-text="${item.name}"
+                   data-th-href="${'http://xiaoguotu.fuwo.com/search/'+item.id+'/'}">客厅背景墙</a>
+            </li>
+            <li class="content-item close" data-th-if="${links!=null and #arrays.length(links)>0}">
+                <a data-th-each="item,itemStat : ${links}" data-th-href="${item.url}" target="_blank"
+                   class="content-item-link" data-th-text="${item.name}"
+                   data-th-rel="${item.nofollow?'nofollow':''}">友情链接</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="footer" data-th-remove="tag">
+    <footer class="footer">
+        <div class="footer-wrap">
+            <!-- 推荐标签-->
+            <div data-th-replace="~{fragment :: #footer-tag}"></div>
+
+            <div class="footer-down-part">
+                <div class="part-left">
+                    <ul class="service-list">
+                        <li class="service-item"><a href="http://www.fuwo.com/about/company.html"
+                                                    class="service-item-link">关于我们</a></li>
+                        <li class="service-item"><a href="http://www.fuwo.com/about/contact.html"
+                                                    class="service-item-link">联系我们</a></li>
+                        <li class="service-item"><a href="http://www.fuwo.com/about/media.html"
+                                                    class="service-item-link">媒体报道</a></li>
+                        <li class="service-item"><a href="http://www.fuwo.com/about/terms.html"
+                                                    class="service-item-link">服务条款</a></li>
+                        <li class="service-item"><a href="http://www.fuwo.com/league.html" class="service-item-link">0元入驻</a>
+                        </li>
+                        <li class="service-item"><a href="http://3d.fuwo.com" class="service-item-link">3D云设计</a></li>
+                    </ul>
+                    <span class="free-statement">本网站部分内容由用户自行上传，如权利人发现存在误传其作品情形，请及时与本站联系。&nbsp;&nbsp;</span><span
+                        class="statement-company"
+                        data-th-utext="${'©'+#dates.format(new java.util.Date().getTime(), 'yyyy')+'&nbsp;Fuwo.com&nbsp;上海爱福窝云技术有限公司保留所有权利'}">2017</span>
+                    <div class="record">
+                        <span class="qualification">沪ICP备08102393号</span>
+                        <a target="_blank"
+                           href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502400287">沪公网安备
+                            31011502400287号</a>
+                    </div>
+                </div>
+                <div class="part-right">
+                    <ul class="erweima-list">
+                        <li class="erweima-item weixin">微信公众号</li>
+                        <li class="erweima-item app">福窝APP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+<div id="share" data-th-remove="tag">
+    <div class="pic-share-box">
+        <div class="pic-share-list-bg">
+            <ul class="pic-share-list">
+                <li class="pic-share-item pic-item">
+                    <span class="pic-share-item-title">图片列表</span>
+                    <i class="icon-pic"></i>
+                </li>
+                <li class="pic-share-item weixin">
+                    <span class="pic-share-item-title">收藏到微信</span>
+                    <i class="icon-weixin"></i>
+                    <div class="weixin-erweima-box">
+                        <p class="total-pics">100+万张装修效果图</p>
+                        <img class="weixin-erwema" src=""/>
+                        <p class="desc">微信随时随地查看</p>
+                    </div>
+                </li>
+                <li class="pic-share-item vr">
+                    <span class="pic-share-item-title">VR全景效果图</span>
+                    <i class="icon-vr"></i>
+                    <div class="vr-box">
+                        <a class="vr-erwema"></a>
+                        <p class="download-app">下载爱福窝APP</p>
+                        <p class="desc">查看案例VR全景图</p>
+                    </div>
+                </li>
+                <li data-th-if="${case}" class="pic-share-item download-pic">
+                    <a data-th-href="${@environment.getProperty('oss.domain')+case.photos[0].fpath}"
+                       download="downloadPic" class="download-pic-link">
+                        <span class="pic-share-item-title">下载</span>
+                        <i class="icon-download-pic"></i>
+                    </a>
+                </li>
+                <li data-th-if="${photo}" class="pic-share-item download-pic">
+                    <a data-th-href="${@environment.getProperty('oss.domain')+photo.fpath}"
+                       download="downloadPic" class="download-pic-link">
+                        <span class="pic-share-item-title">下载</span>
+                        <i class="icon-download-pic"></i>
+                    </a>
+                </li>
+                <li class="pic-share-item share">
+                    <span class="pic-share-item-title"> 分享</span>
+                    <i class="icon-share"></i>
+                    <div class="share-paths-list bdsharebuttonbox" data-tag="share_1">
+                        <a class="share-paths-item-link xlweibo" data-cmd="tsina" href="javascript:void(0)"
+                           title="新浪微博">新浪微博</a>
+                        <a class="share-paths-item-link qzone" data-cmd="qzone" href="javascript:void(0)" title="QQ空间">QQ空间</a>
+                        <a class="share-paths-item-link weixin" data-cmd="weixin" href="javascript:void(0)" title="微信">微信</a>
+                        <a class="share-paths-item-link sqq" data-cmd="sqq" href="javascript:void(0)"
+                           title="QQ好友">QQ好友</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

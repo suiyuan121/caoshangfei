@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="layout">
+
+<head data-th-replace="fragment :: common_header(~{::title},~{::link},~{::meta})">
+
+    <title>没有找到相关页面</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="http://static.fuwo.com/xgt/pc/css/404.css">
+
+</head>
+<body>
+<div layout:fragment="content">
+
+    <section class="banner">
+        <div class="banner-wrap">
+            <img class="logo-404" src="http://static.fuwo.com/xgt/pc/images/common/pc_404.png"/>
+            <div class="desc-404">
+                <h1>hi,真不巧，网页走丢了。</h1>
+                <p>不如搜索一下你想要的，或者返回网站首页试试吧</p>
+                <a class="go-home" href="http://xiaoguotu.fuwo.com">返回首页</a>
+                <a class="go-channel-home" href="javascript:;">返回频道首页</a>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
+<script src="http://static.fuwo.com/xgt/pc/js/xiaoguotu/error.js"></script>
+

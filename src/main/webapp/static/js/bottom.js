@@ -1,0 +1,14 @@
+document.writeln("<style type=\"text/css\">");
+document.writeln("html,body{ margin:0;}");
+document.writeln(".mft{border-top:1px solid #e4e4e4; background:#f3f3f3; padding:32px 0; width:100%;color:#333333; margin-top:50px;font-size:12px;}");
+document.writeln("#mft{width:950px; text-align:center; line-height:24px; margin:0 auto;}");
+document.writeln("#mft a,#mft a:visited{color:#333333; text-decoration:none;}#mft a:hover{color:#ca0000; text-decoration:none;}");
+document.writeln("#mft span{color:#c7c7c7;}");
+document.writeln("</style>");
+document.writeln("<div class=\"mft\">");
+document.writeln("<div id=\"mft\">");
+document.writeln("<div><a href=\"http://www.qingdaonews.com/content/2018-02/26/content_20098384.htm\" target=\"_blank\">青岛新闻网简介</a>  <span>|</span>  <a href=\"http://news.qingdaonews.com/content/2014-01/07/content_10216710.htm\" target=\"_blank\">法律顾问</a>  <span>|</span>  <a href=\"http://passport.qingdaonews.com\" target=\"_blank\">会员注册</a>  <span>|</span>  <a href=\"http://vip.qingdaonews.com/2014/02/yx/\" target=\"_blank\">营销服务</a>  <span>|</span>  <a href=\"mailto:82870000@qingdaonews.com\" target=\"_blank\">邮箱</a></div>");
+document.writeln("<div>青岛：0532-82870000  &nbsp; 全国：4006-187-187 &nbsp;  传真：0532-80921377</div>");
+document.writeln("<div><a href=\"http://www.qingdaonews.com/gb/content/2006-12/25/content_7910401.htm\" target=\"_blank\">增值电信许可证:鲁B2-20040044</a> &nbsp;  <a href=\"http://www.qingdaonews.com/gb/content/2006-12/25/content_7910400.htm\" target=\"_blank\">短信许可:移动、联通、电信 10628532</a>  &nbsp;  <a href=\"http://www.qingdaonews.com/content/2007-07/26/content_7957.htm\" target=\"_blank\">新闻登载许可</a></div>");
+document.writeln("</div>");
+document.writeln("</div>");
