@@ -30,4 +30,7 @@ public class VideoEntity implements Serializable {
     @Column(name = "created_at")
     private Date createdAt;
 
+    @Column(name = "type")
+    private Byte type;
+
 }

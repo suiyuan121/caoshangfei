@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -41,6 +42,10 @@ public class IndexController {
         }
         PageList<VideoEntity> pageList = videoService.findAll(keyword, page, PAGE_SIZE);
         model.addAttribute("pageList", pageList);
+
+        List<VideoEntity> topList = videoService.findAll((byte) 2);
+
+        model.addAttribute("topList", topList);
 
         return "list";
     }

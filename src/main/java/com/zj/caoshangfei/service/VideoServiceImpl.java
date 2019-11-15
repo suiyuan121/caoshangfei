@@ -13,6 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author zhangjin
  * @date 2019-10-31
@@ -30,8 +32,9 @@ public class VideoServiceImpl implements VideoService {
 
         VideoEntity videoEntity = new VideoEntity();
         videoEntity.setTitle(keyword);
-        Example<VideoEntity> example = Example.of(videoEntity, matcher);
+        videoEntity.setType((byte) 1);
 
+        Example<VideoEntity> example = Example.of(videoEntity, matcher);
 
         long count = videoEntityRepository.count(example);
 
@@ -42,5 +45,10 @@ public class VideoServiceImpl implements VideoService {
         Page<VideoEntity> videos = videoEntityRepository.findAll(example, pageable);
 
         return new PageList<>(pageable, count, videos.getContent());
+    }
+
+    @Override
+    public List<VideoEntity> findAll(byte type) {
+        return videoEntityRepository.findByType(type);
     }
 }

@@ -26,7 +26,8 @@
     <div id="topheader">
         <div class="logo">
             <a href="https://www.bob5.app/1573713061?agent_code=15558" target="_blank">
-                <img src="http://i2.tiimg.com/703706/bb68d6e326e863f8.png" alt="bob体育" width="1110" title="bob体育">
+                <img src="http://i2.tiimg.com/703706/bb68d6e326e863f8.png" alt="bob体育" width="1110"
+                     title="bob体育">
             </a>
         </div>
     </div>
@@ -41,7 +42,8 @@
                 </div>
                 <div class="layer_j mb10">
                     <div class="w_p10">
-                        <img src="http://i2.tiimg.com/703706/58e97fcfd8a7812a.png" alt="" height="150"
+                        <img src="http://i2.tiimg.com/703706/58e97fcfd8a7812a.png" alt=""
+                             height="150"
                              width="150"/>
                     </div>
                     <div class="b_p10">
@@ -51,7 +53,8 @@
                     <!--</div>-->
                     <div class="w_p10">
                         <a href="https://www.bob5.app/1573713061?agent_code=15558" target="_blank">
-                            <img src="http://i2.tiimg.com/703706/f3dd086d8efe98a5.jpg" alt="" height="300" width="150"/>
+                            <img src="http://i2.tiimg.com/703706/f3dd086d8efe98a5.jpg" alt=""
+                                 height="300" width="150"/>
                         </a>
                     </div>
                 </div>
@@ -80,6 +83,24 @@
                     <th align="left" class="fl">更新时间</th>
                 </tr>
                 </thead>
+
+                <!--置顶贴-->
+                <tbody data-th-each="item,iterStat : ${topList}"
+                       data-th-class="${iterStat.even}?'even':'odd'">
+                <tr class="">
+                    <td class="qico"><img src="../static/photo/ico_top2.gif" alt="主题帖"></td>
+                    <th class="qtitle">
+                        <div class="qtit">
+                            <a data-th-href="${item.url}"
+                               target="_blank" data-th-text="${item.title}">柯迪亚克GT：经济适用SUV</a>
+                        </div>
+                    </th>
+
+                    <td class="qlastpost" data-th-text="${item.createdAt}">
+                        10-28 16:36
+                    </td>
+                </tr>
+                </tbody>
 
                 <!--普通贴-->
                 <tbody data-th-each="item,iterStat : ${pageList.content}"
