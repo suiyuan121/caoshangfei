@@ -91,6 +91,7 @@ public class CaoliuService {
                             videoEntity.setUrl(url);
                             videoEntity.setTitle(title);
                             videoEntity.setCreatedAt(new Date());
+                            videoEntity.setType((byte) 1);
 
                             videoEntityRepository.save(videoEntity);
                         }
