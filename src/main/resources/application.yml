@@ -50,11 +50,6 @@ spring:
         force-shutdown-on-vm-exit: true
         log-base-dir: tx
         log-base-name: tx
-  session:
-    store-type: redis
-  cache:
-    cache-names: users
-    type: redis
   mvc:
     favicon:
       enabled: false
