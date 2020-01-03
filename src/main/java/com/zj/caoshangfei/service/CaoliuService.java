@@ -47,6 +47,9 @@ public class CaoliuService {
         MediaType type = MediaType.parseMediaType("text/html; charset=GBK");
         requestHeaders.setContentType(type);
 
+        requestHeaders.add("cookie","__cfduid=d6b5d9f4aeda86d42e3a3b839f16da4641578032795; UM_distinctid=16f6a1595d931-0ad4872cea0917-1d376b5c-fa000-16f6a1595db305; CNZZDATA950900=cnzz_eid%3D751062132-1578030469-%26ntime%3D1578030469");
+        requestHeaders.add("user-agent","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36");
+
         HttpEntity<String> requestEntity = new HttpEntity<>(null, requestHeaders);
         ResponseEntity<String> listResponse = restTemplate.exchange(listUrl, HttpMethod.GET, requestEntity, String.class);
 
