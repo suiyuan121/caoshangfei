@@ -1,6 +1,7 @@
 package com.zj.caoshangfei.controller.rest;
 
 import com.zj.caoshangfei.service.CaoliuService;
+import com.zj.caoshangfei.service.DsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +23,16 @@ public class TaskRestController {
     private CaoliuService caoliuService;
 
 
+    @Autowired
+    private DsService dsService;
+
+
     @GetMapping("/list")
-    public String triggerListTask() {
+    public String triggerListTask(Integer page) {
 
         Executors.newSingleThreadExecutor().submit(() -> {
             try {
-                for (int i = 1; i <= 600; i++) {
+                for (int i = 1; i <= page; i++) {
                     log.info("更新列表 i={}", i);
                     caoliuService.getList(i);
                 }
@@ -40,4 +45,11 @@ public class TaskRestController {
     }
 
 
+    @GetMapping("/ds")
+    public String ds(Long matchId) {
+
+        dsService.getScore(matchId);
+
+        return "SUCCESS";
+    }
 }
